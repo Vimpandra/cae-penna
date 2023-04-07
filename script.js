@@ -27,8 +27,11 @@
         background: ['gold', 'cyan', 'pink', 'teal'],
     
         randomColor: function() {
-            return Math.floor(Math.random()*4)
-        }
+            return this.foreground[Math.floor(Math.random()*this.foreground.length)];
+        },
+        randomBG: function() {
+            return this.background[Math.floor(Math.random()*this.background.length)];
+        },
     }
     
     const spans = document.querySelectorAll('span');
@@ -49,8 +52,8 @@
             randomize(span, arr);
         } else {
             span.textContent = arr[randomNum];
-            span.style.color = pallet.foreground[pallet.randomColor()];
-            span.style.backgroundColor = pallet.background[pallet.randomColor()];
+            span.style.color = pallet.randomColor();
+            span.style.backgroundColor = pallet.randomBG();
         }
     };
 
