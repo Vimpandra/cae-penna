@@ -25,7 +25,7 @@ const pallet = {
     foreground: ['black', 'navy', 'magenta', 'white'],
     background: ['gold', 'cyan', 'pink', 'teal'],
 
-    randomize: function() {
+    randomColor: function() {
         return Math.floor(Math.random()*4)
     }
 }
@@ -51,8 +51,8 @@ const spans = document.querySelectorAll('span');
             randomize(span, arr);
         } else {
             span.textContent = arr[randomNum];
-            span.style.color = pallet.foreground[pallet.randomize()];
-            span.style.backgroundColor = pallet.background[pallet.randomize()];
+            span.style.color = pallet.foreground[pallet.randomColor()];
+            span.style.backgroundColor = pallet.background[pallet.randomColor()];
         }
     };
 
